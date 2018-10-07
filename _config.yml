@@ -1,0 +1,5 @@
+# Site settings
+
+collections:
+  projects:
+    output: true

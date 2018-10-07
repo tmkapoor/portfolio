@@ -1,0 +1,60 @@
+---
+layout: main--layout
+---
+<link href="/css/project.css" rel="stylesheet" type="text/css" media="all">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
+
+<section>
+  <h1 class="project__main-title">{{page.title}}</h1>
+  <h4 class="project__short-text">{{page.short-text}}</h4>
+  <img class="project__main-image" src="{{page.main-image}}" alt="Header image for {{page.title}}" />
+</section>
+
+<section>
+  {% if page.para-1 %}
+    <p class="project__full-text-para">{{page.para-1}}</p>
+  {% endif %}
+
+  {% if page.image-set-1 %}
+  <div class="container">
+    <div class="row">
+      {% for  image in page.image-set-1 %}
+        <a class="col-sm-6 col-md-4" href="{{image}}" data-toggle="lightbox">
+          <img src="{{image}}" />
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.para-2 %}
+    <p class="project__full-text-para">{{page.para-2}}</p>
+  {% endif %}
+
+  {% if page.image-set-2 %}
+  <div class="container">
+    <div class="row">
+      {% for image in page.image-set-2 %}
+        <div class="col-sm-6 col-md-4" data-toggle="lightbox">
+          <img src="{{image}}" />
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if page.para-3 %}
+    <p class="project__full-text-para">{{page.para-3}}</p>
+  {% endif %}
+
+  <div class="container justify-content-center">
+    <div class="row">
+      {% for image in page.image-set-1 %}
+        <a href="{{image}}" data-toggle="lightbox" data-gallery="project-gallery" class="col-sm-4">
+            <img src="{{image}}" class="img-fluid">
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
