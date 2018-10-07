@@ -1,6 +1,7 @@
 ---
 layout: main--layout
 title: Tanay Manohar Kapoor
+action: index
 
 hero-title: "Hi, I'm a UX designer and I like to make things"
 ---
@@ -18,12 +19,14 @@ hero-title: "Hi, I'm a UX designer and I like to make things"
 
       {% assign projects = site.projects | sort: 'date' | reverse %}
       {% for project in projects %}
+        {% if project.isactive %}
         <div class="col col-md-4 col-sm-12">
           <div class="project-list__grid-item-image">
             <img src="{{project.main-image}}" />
           </div>
           <a href="{{project.url}}" class="project-list__grid-item-title">{{project.title}}</a>
         </div>
+        {% endif %}
       {% endfor %}
 
     </div>
